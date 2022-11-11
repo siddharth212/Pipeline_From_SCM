@@ -48,17 +48,7 @@ pipeline {
         }
             
             
-         
-            stage('write') {
-           steps {
-               script {
-                   def date = new Date()
-                   def data = "Errors should come Here\nSecond line\n" + date
-                   writeFile(file: 'error.txt', text: data)
-                   echo 'done'
-               }
-           }
-       }
+        
             
            
     }
