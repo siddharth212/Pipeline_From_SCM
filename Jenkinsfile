@@ -15,7 +15,7 @@ pipeline {
             echo err.getMessage()
             echo "Error detected"
              def date = new Date()
-                   def data = err.getMessage()+" " + date
+                   def data = err.getMessage()+" \n " + date
                    writeFile(file: 'error.txt', text: data)
                    echo 'done'
         }
