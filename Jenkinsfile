@@ -2,6 +2,8 @@ pipeline {
     agent any
 
     stages {
+        script{
+            try {
         stage('Hello') {
             steps {
                 echo 'Hello World'
@@ -31,16 +33,22 @@ pipeline {
                 echo 'Releasing the Code'
             }
         }
-        
-        stage('write') {
+            }
+            
+            catch{
+            stage('write') {
            steps {
                script {
                    def date = new Date()
                    def data = "Hello World\nSecond line\n" + date
-                   writeFile(file: 'zorg.txt', text: data)
+                   writeFile(file: 'error.txt', text: data)
                    echo 'done'
                }
            }
        }
+            
+            }
+        
+        
     }
 }
