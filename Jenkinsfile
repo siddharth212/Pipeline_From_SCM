@@ -36,7 +36,7 @@ pipeline {
             
             
          
-            stage('write') {
+         stage('write') {
            steps {
                  script {
                    def date = new Date()
@@ -48,12 +48,10 @@ pipeline {
        }
             
     }
-    }
- 
-    }
+    
         
         
         
         
-        
+}    
 }
