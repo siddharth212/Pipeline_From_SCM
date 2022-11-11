@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script{
                     try{
-                        echo 'Hello World'
+                        ec 'Hello World'
                     }
                     catch (err) {
             echo err.getMessage()
