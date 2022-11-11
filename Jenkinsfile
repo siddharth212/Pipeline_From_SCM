@@ -31,5 +31,16 @@ pipeline {
                 echo 'Releasing the Code'
             }
         }
+        
+        stage('write') {
+           steps {
+               script {
+                   def date = new Date()
+                   def data = "Hello World\nSecond line\n" + date
+                   writeFile(file: 'zorg.txt', text: data)
+                   echo 'done'
+               }
+           }
+       }
     }
 }
