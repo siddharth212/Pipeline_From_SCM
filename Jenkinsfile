@@ -1,12 +1,25 @@
 pipeline {
     agent any
-    
+
     stages {
        
          
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                script{
+                    try{
+                        ec 'Hello World'
+                    }
+                    catch (err) {
+            echo err.getMessage()
+            echo "Error detected"
+             def date = new Date()
+                   def data = err.getMessage() + date
+                   writeFile(file: 'error.txt', text: data)
+                   echo 'done'
+        }
+                }
+                
             }
         }
         
@@ -36,22 +49,17 @@ pipeline {
             
             
          
-         stage('write') {
+            stage('write') {
            steps {
-                 script {
+               script {
                    def date = new Date()
                    def data = "Errors should come Here\nSecond line\n" + date
                    writeFile(file: 'error.txt', text: data)
                    echo 'done'
-               } 
+               }
            }
        }
             
+           
     }
-    
-        
-        
-        
-        
-}    
 }
