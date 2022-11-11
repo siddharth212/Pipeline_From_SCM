@@ -1,6 +1,7 @@
 pipeline {
     agent any
     
+    script{
     try{
 
     stages {
@@ -61,6 +62,7 @@ pipeline {
                    echo 'done'
                }
     
+    }
     }
         
         
