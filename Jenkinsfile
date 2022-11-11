@@ -1,9 +1,6 @@
 pipeline {
     agent any
     
-    script{
-    try{
-
     stages {
        
          
@@ -41,28 +38,18 @@ pipeline {
          
             stage('write') {
            steps {
-               
-           }
-       }
-            
-            
-        
-        
-    }
-    }
-    
-    catch(err){
-        echo err.getMessage()
-        echo "Error detected, but we will continue."
-        
-        script {
+                 script {
                    def date = new Date()
                    def data = "Errors should come Here\nSecond line\n" + date
                    writeFile(file: 'error.txt', text: data)
                    echo 'done'
-               }
-    
+               } 
+           }
+       }
+            
     }
+    }
+ 
     }
         
         
