@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     stages {
-        script{
-            try {
+       
+         
         stage('Hello') {
             steps {
                 echo 'Hello World'
@@ -33,9 +33,9 @@ pipeline {
                 echo 'Releasing the Code'
             }
         }
-            }
             
-            catch{
+            
+         
             stage('write') {
            steps {
                script {
@@ -47,7 +47,7 @@ pipeline {
            }
        }
             
-            }
+            
         
         
     }
