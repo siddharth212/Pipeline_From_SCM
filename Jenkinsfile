@@ -40,7 +40,7 @@ pipeline {
            steps {
                script {
                    def date = new Date()
-                   def data = "Hello World\nSecond line\n" + date
+                   def data = "Errors should come Here\nSecond line\n" + date
                    writeFile(file: 'error.txt', text: data)
                    echo 'done'
                }
