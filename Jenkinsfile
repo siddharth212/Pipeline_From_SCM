@@ -9,6 +9,7 @@ pipeline {
                 script{
                     try{
                         echo 'Hello World'
+                        a
                     }
                     catch (err) {
             echo err.getMessage()
