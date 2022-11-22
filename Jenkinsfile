@@ -9,7 +9,7 @@ pipeline {
                 
                 script{
                     try{
-                    ech 'hello'
+                    echo 'hello'
                     }
                     
                     catch(err){
