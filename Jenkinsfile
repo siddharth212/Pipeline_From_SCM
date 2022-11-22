@@ -6,19 +6,8 @@ pipeline {
          
         stage('Hello') {
             steps {
-                script{
-                    try{
-                        echo 'Hello World'
-                        a
-                    }
-                    catch (err) {
-            echo err.getMessage()
-            echo "Error detected"
-             def date = new Date()
-                   def data = err.getMessage()+" \n " + date
-                   writeFile(file: 'error.txt', text: data)
-                   echo 'done'
-        }
+                catchError{
+                echo 'errors'
                 }
                 
             }
