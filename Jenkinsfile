@@ -17,7 +17,7 @@ pipeline {
                         writeFile(file: 'error.txt', text:data) 
                     }
                 
-                }
+                
                
                 }
                 
