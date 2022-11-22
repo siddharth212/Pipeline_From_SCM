@@ -13,6 +13,7 @@ pipeline {
                 ech 'errorssss'  
                
                 }
+                }
                 
             }
         }
