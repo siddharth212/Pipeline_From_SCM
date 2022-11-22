@@ -7,7 +7,7 @@ pipeline {
         stage('Hello') {
             steps {
                 catchError{
-                echo 'errors'
+                ech 'errors'
                 }
                 
             }
