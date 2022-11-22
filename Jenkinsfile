@@ -6,11 +6,18 @@ pipeline {
          
         stage('Hello') {
             steps {
-
-                catchError(buildResult:'unstable',catchInterruptions:false, message:'stage failed', stageResult:'Failure'){
-                ech 'errors'
-                catchError{
-                ech 'errorssss'  
+                
+                script{
+                    try{
+                    ech 'hello'
+                    }
+                    
+                    catch(err){
+                        def data = err.getMessage()
+                        writeFile(file: 'error.txt', text:data) 
+                    }
+                
+                }
                
                 }
                 }
