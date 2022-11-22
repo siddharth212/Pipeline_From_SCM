@@ -6,8 +6,9 @@ pipeline {
          
         stage('Hello') {
             steps {
-                catchError{
-                ech 'errors'
+                catchError(buildResult:'unstable',catchInterruption:false, message:'stage failed', stageResult:'Failure'){
+                ech 'errorssss'  
+                   
                 }
                 
             }
