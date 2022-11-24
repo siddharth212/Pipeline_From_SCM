@@ -13,6 +13,7 @@ pipeline {
                     }
                     
                     catch(err){
+                        echo 'in catch'
                         def data = err.getMessage()
                         writeFile(file: 'error.txt', text:data) 
                     }
