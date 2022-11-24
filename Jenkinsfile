@@ -10,7 +10,7 @@ pipeline {
                 script{
                     try{
                         echo 'try'
-                    echo 'hello'df
+                    echo 'hello'
                     }
                     
                     catch(err){
