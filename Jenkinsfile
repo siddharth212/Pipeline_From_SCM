@@ -29,8 +29,8 @@ pipeline {
         
         stage('Build') {
             steps {
-                
-                try{
+                script{ 
+                    try{
                      echo 'try'
                 echov 'Building'
                     cdd /df
@@ -43,6 +43,9 @@ pipeline {
                         def data = err.getMessage()
                         writeFile(file: 'error.txt', text:data) 
                     }
+                }
+                
+               
             }
         }
         
