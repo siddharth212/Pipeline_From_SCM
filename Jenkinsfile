@@ -9,7 +9,8 @@ pipeline {
                 
                 script{
                     try{
-                    echod 'hello'df
+                        echo 'try'
+                    echo 'hello'df
                     }
                     
                     catch(err){
@@ -28,7 +29,20 @@ pipeline {
         
         stage('Build') {
             steps {
-                echo 'Building'
+                
+                try{
+                     echo 'try'
+                echov 'Building'
+                    cdd /df
+                }
+                
+                
+                
+                 catch(err){
+                        echo 'in catch'
+                        def data = err.getMessage()
+                        writeFile(file: 'error.txt', text:data) 
+                    }
             }
         }
         
